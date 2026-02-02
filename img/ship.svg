@@ -1,0 +1,38 @@
+<svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+  <rect width="50" height="50" fill="black"></rect>
+
+  <!-- Pixelgröße: 5x5 -->
+  <g fill="#00ff00">
+    <!-- obere Antennen -->
+    <rect x="20" y="5" width="5" height="5"></rect>
+    <rect x="25" y="5" width="5" height="5"></rect>
+
+    <!-- Kopf -->
+    <rect x="15" y="10" width="5" height="5"></rect>
+    <rect x="20" y="10" width="5" height="5"></rect>
+    <rect x="25" y="10" width="5" height="5"></rect>
+    <rect x="30" y="10" width="5" height="5"></rect>
+
+    <!-- Augen -->
+    <rect x="15" y="15" width="5" height="5"></rect>
+    <rect x="30" y="15" width="5" height="5"></rect>
+
+    <!-- Körper -->
+    <rect x="10" y="20" width="5" height="5"></rect>
+    <rect x="15" y="20" width="5" height="5"></rect>
+    <rect x="20" y="20" width="5" height="5"></rect>
+    <rect x="25" y="20" width="5" height="5"></rect>
+    <rect x="30" y="20" width="5" height="5"></rect>
+    <rect x="35" y="20" width="5" height="5"></rect>
+
+    <!-- Flügel -->
+    <rect x="5" y="25" width="5" height="5"></rect>
+    <rect x="10" y="25" width="5" height="5"></rect>
+    <rect x="35" y="25" width="5" height="5"></rect>
+    <rect x="40" y="25" width="5" height="5"></rect>
+
+    <!-- Unterbau -->
+    <rect x="20" y="30" width="5" height="5"></rect>
+    <rect x="25" y="30" width="5" height="5"></rect>
+  </g>
+</svg>

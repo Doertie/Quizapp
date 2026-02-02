@@ -1,0 +1,29 @@
+<svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+  <rect width="50" height="50" fill="black"></rect>
+
+  <!-- Pixelgröße: 5x5 -->
+  <g fill="#00ff00">
+    <!-- Kopf -->
+    <rect x="10" y="10" width="5" height="5"></rect>
+    <rect x="15" y="10" width="5" height="5"></rect>
+    <rect x="20" y="10" width="5" height="5"></rect>
+    <rect x="25" y="10" width="5" height="5"></rect>
+    <rect x="30" y="10" width="5" height="5"></rect>
+
+    <!-- Augen -->
+    <rect x="15" y="15" width="5" height="5"></rect>
+    <rect x="25" y="15" width="5" height="5"></rect>
+
+    <!-- Körper -->
+    <rect x="10" y="20" width="5" height="5"></rect>
+    <rect x="15" y="20" width="5" height="5"></rect>
+    <rect x="20" y="20" width="5" height="5"></rect>
+    <rect x="25" y="20" width="5" height="5"></rect>
+    <rect x="30" y="20" width="5" height="5"></rect>
+
+    <!-- Beine -->
+    <rect x="10" y="25" width="5" height="5"></rect>
+    <rect x="20" y="25" width="5" height="5"></rect>
+    <rect x="30" y="25" width="5" height="5"></rect>
+  </g>
+</svg>
