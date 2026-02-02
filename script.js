@@ -1,29 +1,45 @@
 let rendomNum = 0;
 
 function renderQuestion() {
-  let refQuestion = document.getElementById('question');
-  rendomNum = Math.floor(Math.random() * vocabulary_db.length);
+  let refGermanWord = document.getElementById('germanWord');
+  let germanWord = vocabulary_db[rendomNum].germenWord;
 
-  let question = vocabulary_db[rendomNum].question;
-  refQuestion.innerHTML = question;
+  refGermanWord.innerHTML = germanWord;
+  rendomNum = Math.floor(Math.random() * vocabulary_db.length);
 }
 
 function submitAnswer() {
-  let answer = document.getElementById('answer');
-  let shipShot = document.getElementById('spaceShipShot')
+  let refEnglishWord = document.getElementById('englishWord');
+  let refShipShoot = document.getElementById('spaceShipShoot');
+  let refInvaderShoot = document.getElementById('invaderShoot');
 
-  if (answer.value == vocabulary_db[rendomNum].answer) {
-    shipShot.classList.add('spaceship_shot');
-    shipShot.style.animation = "shipShot 2s"
-
-    setTimeout(() => {
-      shipShot.classList.remove('spaceship_shot');
-      shipShot.style.animation = ""
-      renderQuestion()
-    }, 2000);
-    console.log('that was right');
-
+  if (refEnglishWord.value == vocabulary_db[rendomNum].englishWord) {
+    spaceShipShoot(refShipShoot);
   } else {
-    console.log('that was not correct');
+    invaderShoot(refInvaderShoot);
   }
+}
+
+function spaceShipShoot(shipShoot) {
+  shipShoot.classList.add('spaceship_shoot');
+  shipShoot.style.animation = "shipShoot 1s";
+
+  setTimeout(() => {
+    shipShoot.classList.remove('spaceship_shoot');
+    shipShoot.style.animation = "";
+    renderQuestion();
+  }, 1000);
+  console.log('that was right');
+}
+
+function invaderShoot(invaderShoot) {
+  invaderShoot.classList.add('invader_shoot');
+  invaderShoot.style.animation = "invaderShoot 1s";
+
+  setTimeout(() => {
+    invaderShoot.classList.remove('invader_shoot');
+    invaderShoot.style.animation = "";
+    renderQuestion();
+  }, 1000);
+  console.log('that was not correct');
 }

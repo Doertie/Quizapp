@@ -25,22 +25,23 @@
 
   <main class="main">
     <section id="invaderMustDie" class="invaderMustDie">
+
       <div class="invader"><img src="./img/invader.svg" alt="invader"></div>
-
-      <div class="shot_space">
-        <div class="invader_shot"></div>
-        <div id="spaceShipShot"></div>
+      <div class="shoot_space">
+        <div id="invaderShoot"></div>
+        <!-- Space Between -->
+        <div id="spaceShipShoot"></div>
       </div>
+      <div class="space_ship"><img src="./img/ship.svg" alt="Space Ship"></div>
 
-      <div class="space_ship"><img src="./img/ship.svg" alt="Space Invader Ship"></div>
     </section>
 
-    <section class="questioNanswer">
-      <p class="question">Was heißt "<span id="question">
+    <section class="vocabulary">
+      <p class="german_word">Was heißt "<span id="germanWord">
           <!-- gen Question -->
         </span>" auf english?</p>
       <section class="submit_section">
-        <input id="answer" class="input" type="text" required>
+        <input id="englishWord" class="input" type="text" required>
         <button class="submitButton" onclick="submitAnswer()">submit</button>
       </section>
     </section>

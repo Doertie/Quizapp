@@ -1,22 +1,10 @@
 const vocabulary_db = [
   {
-    "question": "wie",
-    "answer": "how"
+    "germenWord": "wie",
+    "englishWord": "how"
   },
   {
-    "question": "wer",
-    "answer": "who"
-  },
-  {
-    "question": "wo",
-    "answer": "where"
-  },
-  {
-    "question": "durch",
-    "answer": "throught"
-  },
-  {
-    "question": "warum",
-    "answer": "why"
+    "germenWord": "wer",
+    "englishWord": "who"
   },
 ];
