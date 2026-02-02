@@ -24,16 +24,17 @@
   </header>
 
   <main class="main">
-    <div id="hangMan" class="hangMan">
-    </div>
+    <section id="invaderMustDie" class="invaderMustDie">
+      <div class="space_ship"></div>
+    </section>
 
     <section class="questioNanswer">
       <p class="question">Was heißt "<span id="question">
         <!-- gen Question -->
       </span>" auf english?</p>
       <form  class="submit_section">
-        <input class="input" type="text" required>
-        <button class="submitButton">submit</button>
+        <input id="answer" class="input" type="text" required>
+        <button class="submitButton" onclick="submitAnswer()">submit</button>
       </form>
     </section>
   </main>
