@@ -6,7 +6,7 @@ let spaceShipLVLup = 200;
 
 function renderQuestion() {
   let refGermanWord = document.getElementById('germanWord');
-  
+
   rendomIndexNum = Math.floor(Math.random() * vocabulary_db.length);
   let germanWord = vocabulary_db[rendomIndexNum].germenWord;
 
@@ -19,20 +19,18 @@ function submitAnswer() {
   let refShipShoot = document.getElementById('spaceShipShoot');
   let refInvaderShoot = document.getElementById('invaderShoot');
   let refMessage = document.getElementById('message');
+  let refRightAnswer = document.getElementById('rightAnswer');
 
-  console.log(refEnglishWord.value);
-  
-  console.log(vocabulary_db[rendomIndexNum].englishWord);
-  
   refMessage.innerHTML = '';
   if (refEnglishWord.value == vocabulary_db[rendomIndexNum].englishWord) {
-    spaceShipShoot(refShipShoot, refMessage);
+    spaceShipShoot(refShipShoot, refMessage, refRightAnswer);
   } else {
-    invaderShoot(refInvaderShoot, refMessage);
+    invaderShoot(refInvaderShoot, refMessage, rendomIndexNum, refRightAnswer);
   }
 }
 
-function spaceShipShoot(shipShoot, refMessage) {
+function spaceShipShoot(shipShoot, refMessage, refRightAnswer) {
+  refRightAnswer.innerHTML = '';
   shipShoot.classList.add('spaceship_shoot');
   shipShoot.style.animation = "shipShoot 0.5s ease-in";
 
@@ -48,14 +46,15 @@ function spaceShipShoot(shipShoot, refMessage) {
   }, 600);
 }
 
-function invaderShoot(invaderShoot, refMessage) {
+function invaderShoot(invaderShoot, refMessage, rendomIndexNum, refRightAnswer) {
   invaderShoot.classList.add('invader_shoot');
   invaderShoot.style.animation = "invaderShoot 0.5s ease-in";
 
   setTimeout(() => {
     invaderShoot.classList.remove('invader_shoot');
     invaderShoot.style.animation = "";
-    refMessage.innerHTML = 'NOOO!!!';
+    refRightAnswer.innerHTML = `''${vocabulary_db[rendomIndexNum].germenWord}'' <br> heißt auf englisch:`
+    refMessage.innerHTML = `${vocabulary_db[rendomIndexNum].englishWord}`;
     spaceShipHP -= 100;
     if (spaceShipHP == 0) gameOverSeq(refMessage);
     renderQuestion();
