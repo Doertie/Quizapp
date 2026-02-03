@@ -56,7 +56,7 @@ function invaderShoot(invaderShoot, refMessage, rendomIndexNum, refRightAnswer) 
     refRightAnswer.innerHTML = `''${vocabulary_db[rendomIndexNum].germenWord}'' <br> heißt auf englisch:`
     refMessage.innerHTML = `${vocabulary_db[rendomIndexNum].englishWord}`;
     spaceShipHP -= 100;
-    if (spaceShipHP == 0) gameOverSeq(refMessage);
+    if (spaceShipHP == 0) gameOverSeq(refMessage, refRightAnswer);
     renderQuestion();
   }, 600);
 }
@@ -71,16 +71,23 @@ function renderHP() {
   refSpaceShipLVL.innerHTML = 'LVL ' + spaceShipLVL;
 }
 
-function lvlUP (refMessage) {
+function lvlUP(refMessage) {
   refMessage.innerHTML = 'LVL++';
   spaceShipHP += spaceShipLVLup;
   spaceShipLVL++;
   invaderHP = 300;
 }
 
-function gameOverSeq(refMessage) {
-  refMessage.innerHTML = 'GAME OVER';
+function gameOverSeq(refMessage, refRightAnswer) {
+  let refSpaceShipSection = document.getElementById('spaceShipSection');
+
+  refRightAnswer.innerHTML = '';
+  refSpaceShipSection.setAttribute('style', 'display:none !important');
+  refMessage.innerHTML = '<img src="./img/game_over.png" width="200px" alt="">'
   setTimeout(() => {
-    location.reload();
+    refMessage.innerHTML = 'GAME OVER';
+    setTimeout(() => {
+      location.reload();
+    }, 2000);
   }, 2000);
 }

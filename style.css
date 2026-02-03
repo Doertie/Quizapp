@@ -89,6 +89,12 @@
   animation-duration: 3s;
 }
 
+#message img {
+  position: relative;
+  top: -70px;
+  left: 16px;
+}
+
 .rightAnswer {
   display: flex;
   justify-content: center;
@@ -130,6 +136,11 @@
 }
 
 /* spaceship */
+
+#spaceShipSection {
+  display: flex;
+}
+
 .space_ship {
   z-index: 1;
   display: flex;
