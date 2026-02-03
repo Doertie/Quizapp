@@ -26,13 +26,21 @@
   <main class="main">
     <section id="invaderMustDie" class="invaderMustDie">
 
-      <div class="invader"><img src="./img/invader.svg" alt="invader"></div>
+      <div class="invader">
+        <img src="./img/invader.svg" alt="invader">
+        <p id="invaderHP"></p>
+      </div>
       <div class="shoot_space">
         <div id="invaderShoot"></div>
-        <!-- Space Between -->
+        <!-- space between -->
+        <p id="message"></p>
+        <!-- space between -->
         <div id="spaceShipShoot"></div>
       </div>
-      <div class="space_ship"><img src="./img/ship.svg" alt="Space Ship"></div>
+      <div class="space_ship">
+        <img src="./img/ship.svg" alt="Space Ship">
+        <p id="spaceShipHP"></p>
+      </div>
 
     </section>
 
@@ -42,13 +50,13 @@
         </span>" auf english?</p>
       <section class="submit_section">
         <input id="englishWord" class="input" type="text" required>
-        <button class="submitButton" onclick="submitAnswer()">submit</button>
+        <button class="submit_button" onclick="submitAnswer()">submit</button>
       </section>
     </section>
   </main>
 
   <footer class="footer">
-    <p>&#169 Julian Aegert</p>
+    <p>&#169 Julian Aergert</p>
   </footer>
 </body>
 
