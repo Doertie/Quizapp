@@ -61,7 +61,7 @@
   border-style: solid;
   border-radius: 8px;
   border-color: black;
-  background: #12b5b0;
+  background: #3a4848;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -82,6 +82,8 @@
   color: #00ff51;
   text-shadow: 3px 5px #ff0095;
   text-align: center;
+  animation-name: showMessage;
+  animation-duration: 3s;
 }
 
 /* invader */
@@ -143,4 +145,3 @@
     top: -300px;
   }
 }
-

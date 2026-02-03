@@ -1,6 +1,7 @@
 let rendomIndexNum = 0;
-let spaceShipHP = 200;
-let invaderHP = 200;
+let invaderHP = 300;
+let spaceShipHP = 500;
+let spaceShipLVLup = 300;
 
 function renderQuestion() {
   let refGermanWord = document.getElementById('germanWord');
@@ -15,40 +16,42 @@ function submitAnswer() {
   let refEnglishWord = document.getElementById('englishWord');
   let refShipShoot = document.getElementById('spaceShipShoot');
   let refInvaderShoot = document.getElementById('invaderShoot');
-  let message = document.getElementById('message');
+  let refMessage = document.getElementById('message');
 
-  message.innerHTML = '';
+  refMessage.innerHTML = '';
   if (refEnglishWord.value == vocabulary_db[rendomIndexNum].englishWord) {
-    spaceShipShoot(refShipShoot, message);
+    spaceShipShoot(refShipShoot, refMessage);
   } else {
-    invaderShoot(refInvaderShoot, message);
+    invaderShoot(refInvaderShoot, refMessage);
   }
 }
 
-function spaceShipShoot(shipShoot, message) {
+function spaceShipShoot(shipShoot, refMessage) {
   shipShoot.classList.add('spaceship_shoot');
   shipShoot.style.animation = "shipShoot 0.5s ease-in";
 
   setTimeout(() => {
     shipShoot.classList.remove('spaceship_shoot');
     shipShoot.style.animation = "";
-    message.innerHTML = '!CORRECT!';
+    refMessage.innerHTML = '!CORRECT!';
     invaderHP -= 100;
-    if (invaderHP == 0) lvlUP(message);
+    if (invaderHP == 0) {
+      lvlUP(refMessage);
+    }
     renderQuestion();
   }, 600);
 }
 
-function invaderShoot(invaderShoot, message) {
+function invaderShoot(invaderShoot, refMessage) {
   invaderShoot.classList.add('invader_shoot');
   invaderShoot.style.animation = "invaderShoot 0.5s ease-in";
 
   setTimeout(() => {
     invaderShoot.classList.remove('invader_shoot');
     invaderShoot.style.animation = "";
-    message.innerHTML = '!NCORRECT!';
+    refMessage.innerHTML = 'NOOO!!!';
     spaceShipHP -= 100;
-    if (spaceShipHP == 0) gameOverSeq();
+    if (spaceShipHP == 0) gameOverSeq(refMessage);
     renderQuestion();
   }, 600);
 }
@@ -59,17 +62,15 @@ function renderHP() {
 
   refSpaceShipHP.innerHTML = spaceShipHP + 'HP';
   refInvaderHP.innerHTML = invaderHP + 'HP';
-
 }
 
-function lvlUP(message) {
-  message.innerHTML = 'LVL++';
+function lvlUP (refMessage) {
+  refMessage.innerHTML = 'LVL++';
+  spaceShipHP += spaceShipLVLup;
+  invaderHP = 300;
 }
 
-function gameOverSeq() {
-  let refMessage = document.getElementById('message');
-  let refLockSubmit = document.getElementById('vocabulary');
-
+function gameOverSeq(refMessage) {
   refMessage.innerHTML = 'GAME OVER';
   setTimeout(() => {
     location.reload();
