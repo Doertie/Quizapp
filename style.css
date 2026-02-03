@@ -95,6 +95,8 @@
   left: 42%;
   font-size: 16px;
   font-weight: 600;
+  color: #00ff51;
+  text-shadow: 1px 2px #ff0095;
 }
 
 .invader_shoot {
@@ -125,6 +127,8 @@
   left: 42%;
   font-size: 16px;
   font-weight: 600;
+  color: #00ff51;
+  text-shadow: 1px 2px #ff0095;
 }
 
 .spaceship_shoot {

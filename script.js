@@ -1,7 +1,8 @@
 let rendomIndexNum = 0;
 let invaderHP = 300;
 let spaceShipHP = 500;
-let spaceShipLVLup = 300;
+let spaceShipLVL = 1;
+let spaceShipLVLup = 200;
 
 function renderQuestion() {
   let refGermanWord = document.getElementById('germanWord');
@@ -59,14 +60,17 @@ function invaderShoot(invaderShoot, refMessage) {
 function renderHP() {
   let refSpaceShipHP = document.getElementById('spaceShipHP');
   let refInvaderHP = document.getElementById('invaderHP');
+  let refSpaceShipLVL = document.getElementById('spaceShipLVL')
 
   refSpaceShipHP.innerHTML = spaceShipHP + 'HP';
   refInvaderHP.innerHTML = invaderHP + 'HP';
+  refSpaceShipLVL.innerHTML = 'LVL ' + spaceShipLVL;
 }
 
 function lvlUP (refMessage) {
   refMessage.innerHTML = 'LVL++';
   spaceShipHP += spaceShipLVLup;
+  spaceShipLVL++;
   invaderHP = 300;
 }
 
