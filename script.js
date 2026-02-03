@@ -6,10 +6,11 @@ let spaceShipLVLup = 200;
 
 function renderQuestion() {
   let refGermanWord = document.getElementById('germanWord');
+  
+  rendomIndexNum = Math.floor(Math.random() * vocabulary_db.length);
   let germanWord = vocabulary_db[rendomIndexNum].germenWord;
 
   refGermanWord.innerHTML = germanWord;
-  rendomIndexNum = Math.floor(Math.random() * vocabulary_db.length);
   renderHP()
 }
 
@@ -19,6 +20,10 @@ function submitAnswer() {
   let refInvaderShoot = document.getElementById('invaderShoot');
   let refMessage = document.getElementById('message');
 
+  console.log(refEnglishWord.value);
+  
+  console.log(vocabulary_db[rendomIndexNum].englishWord);
+  
   refMessage.innerHTML = '';
   if (refEnglishWord.value == vocabulary_db[rendomIndexNum].englishWord) {
     spaceShipShoot(refShipShoot, refMessage);
