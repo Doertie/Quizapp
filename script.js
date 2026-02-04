@@ -4,6 +4,13 @@ let spaceShipHP = 500;
 let spaceShipLVL = 1;
 let spaceShipLVLup = 200;
 
+addEventListener('keydown', (e) => {
+  if (e.repeat) return;
+  if (e.key === "Enter") {
+    submitAnswer()
+  }
+});
+
 function renderQuestion() {
   let refGermanWord = document.getElementById('germanWord');
 
@@ -22,6 +29,7 @@ function submitAnswer() {
   let refRightAnswer = document.getElementById('rightAnswer');
 
   refMessage.innerHTML = '';
+  refEnglishWord.value = '';
   if (refEnglishWord.value == vocabulary_db[rendomIndexNum].englishWord) {
     spaceShipShoot(refShipShoot, refMessage, refRightAnswer);
   } else {

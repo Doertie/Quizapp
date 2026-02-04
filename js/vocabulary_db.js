@@ -240,8 +240,8 @@ const vocabulary_db = [
     "englishWord": "correct"
   },
   {
-    "germenWord": "drive",
-    "englishWord": "fahren"
+    "germenWord": "fahren",
+    "englishWord": "drive"
   },
   {
     "germenWord": "das Feuerwehrauto",

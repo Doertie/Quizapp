@@ -35,6 +35,7 @@
           <p id="rightAnswer"></p>
         </section>
       </div>
+
       <section class="shoot_space">
         <div id="invaderShoot"></div>
         <!-- space between -->
@@ -42,6 +43,7 @@
         <!-- space between -->
         <div id="spaceShipShoot"></div>
       </section>
+
       <section class="space_ship" id="spaceShipSection">
         <p id="spaceShipLVL"></p>
         <img src="./img/spaceship.png" width="100px" alt="Space Ship">
@@ -51,14 +53,18 @@
     </section>
 
     <section class="vocabulary">
-      <p class="german_word">Was heißt "<span id="germanWord">
-          <!-- gen Question -->
-        </span>" auf english?</p>
+
+      <p class="german_word">
+        Was heißt "<span id="germanWord"></span>" auf english?
+      </p>
+
       <section class="submit_section">
-        <input id="englishWord" class="input" type="text" required>
+        <input id="englishWord" class="input" type="text" placeholder="..........." required>
         <button class="submit_button" onclick="submitAnswer()">submit</button>
       </section>
+
     </section>
+
   </main>
 
   <footer class="footer">
