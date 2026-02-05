@@ -3,6 +3,11 @@ let invaderHP = 300;
 let spaceShipHP = 500;
 let spaceShipLVL = 1;
 let spaceShipLVLup = 200;
+let vocabularyToBeLearnedCase = [];
+
+for (let vocabularyIndex = 0; vocabularyIndex < vocabulary_db.length; vocabularyIndex++) {
+  vocabularyToBeLearnedCase.push(vocabulary_db[vocabularyIndex]);
+}
 
 addEventListener('keydown', (e) => {
   if (e.repeat) return;
@@ -13,9 +18,14 @@ addEventListener('keydown', (e) => {
 
 function renderQuestion() {
   let refGermanWord = document.getElementById('germanWord');
+  let refMessage = document.getElementById('message');
 
-  rendomIndexNum = Math.floor(Math.random() * vocabulary_db.length);
-  let germanWord = vocabulary_db[rendomIndexNum].germenWord;
+  if (vocabularyToBeLearnedCase.length == 0) {
+    winSeq(refMessage);
+    return;
+  } 
+  rendomIndexNum = Math.floor(Math.random() * vocabularyToBeLearnedCase.length);
+  let germanWord = vocabularyToBeLearnedCase[rendomIndexNum].germenWord;
 
   refGermanWord.innerHTML = germanWord;
   renderHP()
@@ -29,12 +39,14 @@ function submitAnswer() {
   let refRightAnswer = document.getElementById('rightAnswer');
 
   refMessage.innerHTML = '';
-  refEnglishWord.value = '';
-  if (refEnglishWord.value == vocabulary_db[rendomIndexNum].englishWord) {
+  if (refEnglishWord.value == vocabularyToBeLearnedCase[rendomIndexNum].englishWord) {
     spaceShipShoot(refShipShoot, refMessage, refRightAnswer);
+
+    vocabularyToBeLearnedCase.splice(rendomIndexNum, 1)
   } else {
     invaderShoot(refInvaderShoot, refMessage, rendomIndexNum, refRightAnswer);
   }
+  refEnglishWord.value = '';
 }
 
 function spaceShipShoot(shipShoot, refMessage, refRightAnswer) {
@@ -98,4 +110,13 @@ function gameOverSeq(refMessage, refRightAnswer) {
       location.reload();
     }, 2000);
   }, 2000);
+}
+
+function winSeq(refMessage) {
+  let refGermanQuestion = document.getElementById('germanQuestion');
+  let refSubmit = document.getElementById('submitSection');
+  
+  refMessage.innerHTML = 'You Win!!!';
+  refGermanQuestion.innerHTML = '!!!Hervoragend!!! <br> Push "Strg + R" to restart your training';
+  refSubmit.style.display = 'none'
 }
